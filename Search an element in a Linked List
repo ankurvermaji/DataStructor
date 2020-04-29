@@ -1,0 +1,52 @@
+public class TestLinkedlist {
+	Node head ;
+	class Node
+	{
+		int data ;
+		Node next ;
+		 public Node(int d)
+		 {
+			 data =d;
+			 next =null;
+		 }
+	}
+ public void push(int d )
+ {
+	 Node newnode =new Node(d);
+	 newnode.next =head ;
+	 head =newnode ;
+ }
+  public boolean searchNode(Node head ,int n)
+ {
+	 boolean tmp =false ;
+	 Node current =head ;
+	 while(current != null )
+	 {
+		if(current.data == n) ;
+		{
+	
+			tmp =true ;
+		current=current.next ;
+		}
+		
+	 }
+	 return tmp;
+ }
+	 
+ public static void main(String args[])
+ {
+	 TestLinkedlist linkedlist =new TestLinkedlist();
+	 linkedlist.push(1);
+	 linkedlist.push(2);
+	 linkedlist.push(3);
+	 linkedlist.push(4);
+	 linkedlist.push(5);
+	 linkedlist.push(6);
+	  int n = 6;
+	 if(linkedlist.searchNode(linkedlist.head, n))
+		   System.out.println("Yes"); 
+     else
+         System.out.println("No");
+	 
+ }
+}
