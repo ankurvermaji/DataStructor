@@ -1,0 +1,64 @@
+public class TestLinkedlist {
+	Node head ;
+	class Node
+	{
+		int data ;
+		Node next ;
+		 public Node(int d)
+		 {
+			 data =d;
+			 next =null;
+		 }
+	}
+ public void push(int d )
+ {
+	 Node newnode =new Node(d);
+	 newnode.next =head ;
+	 head =newnode ;
+ }
+
+ static int countNodes( Node n) { 
+		  int res = 1;
+		  Node temp = n;
+		  while (temp.next != n) 
+		  { 
+			  res++; 
+			  temp = temp.next;
+			  } 
+		  return res; 
+		  }
+	  
+
+	
+	  public int loop() {
+		  Node fast_ptr =head ; Node slow_ptr =head ;
+	  
+	  while(fast_ptr !=null && fast_ptr.next !=null) { 
+		  fast_ptr = fast_ptr.next.next ; 
+		  slow_ptr =slow_ptr.next ; 
+		  if(fast_ptr == slow_ptr) {
+	  System.out.println("Found loop");
+	  return countNodes(slow_ptr); }else {
+	  System.out.println("not Found loop"); return 0; } }
+	  
+	  
+	  return 0;
+	  
+	  }
+	 
+ public static void main(String args[])
+ {
+	 TestLinkedlist linkedlist =new TestLinkedlist();
+	 linkedlist.push(1);
+	 linkedlist.push(2);
+	 linkedlist.push(3);
+	 linkedlist.push(4);
+	 linkedlist.push(5);
+	 linkedlist.push(6);
+	 
+	// System.out.println("  linkedlist length "+linkedlist.linkedlistlength());
+	// linkedlist.middle();
+	linkedlist.loop();
+	 
+ }
+}
