@@ -1,0 +1,50 @@
+public class TestLinkedlist {
+	Node head ;
+	class Node
+	{
+		int data ;
+		Node next ;
+		 public Node(int d)
+		 {
+			 data =d;
+			 next =null;
+		 }
+	}
+ public void push(int d )
+ {
+	 Node newnode =new Node(d);
+	 newnode.next =head ;
+	 head =newnode ;
+ }
+ public void middle()
+ {
+	 Node fast_ptr =head ;
+	 Node slow_ptr =head ;
+	 if(head !=null)
+	 {
+		 while(fast_ptr !=null && fast_ptr.next !=null)
+		 {
+			 fast_ptr = fast_ptr.next.next ;
+			 slow_ptr =slow_ptr.next ;
+		 }
+		 System.out.println("The middle element is [" + 
+                 slow_ptr.data + "] \n");
+	 }
+	 
+ }
+ public static void main(String args[])
+ {
+	 TestLinkedlist linkedlist =new TestLinkedlist();
+	 linkedlist.push(1);
+	 linkedlist.push(2);
+	 linkedlist.push(3);
+	 linkedlist.push(4);
+	 linkedlist.push(5);
+	 linkedlist.push(6);
+	 
+	// System.out.println("  linkedlist length "+linkedlist.linkedlistlength());
+	 linkedlist.middle();
+	// linkedlist.loop();
+	 
+ }
+}
