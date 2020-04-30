@@ -1,0 +1,29 @@
+class Node {
+	int key ;
+	Node left ;
+	Node right ;
+	Node(int key)
+	{
+		key =key ;
+		left = right =null ;
+	}
+}
+public class TestDemoTreee {
+	Node root ;
+	
+	TestDemoTreee ()
+	{
+		root =null ;
+	}
+	TestDemoTreee(int key)
+	{
+		root = new Node(key);
+	}
+    public static void main(String args[])
+    {
+    	TestDemoTreee tree =new TestDemoTreee();
+    	tree.root =new  Node(1);
+    	tree.root.left = new Node(2); 
+        tree.root.right = new Node(3); 
+    }
+}
