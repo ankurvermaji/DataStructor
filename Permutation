@@ -1,0 +1,39 @@
+package Domo_Array;
+
+public class Permutation {
+public static void main(String args[])
+	{
+		String str ="ABC";
+		int length =str.length();
+		Permutation p =new Permutation();
+		p.permutation(str ,0,length-1);
+	}
+     public  void permutation(String str ,int r ,int l)
+     {
+    	 String str1 ;
+    	 if(r == l)
+    	 {
+    		 System.out.println(str);  
+    	 }
+    	 else
+    	 {
+    		 for(int i =r ;i<=l ;i++)
+    		 {
+    			str= swap(str ,i,l);
+    			permutation(str ,r+1,l);
+    			str= swap(str ,r,l);
+    		 }
+    	 }
+     }
+     public   String swap(String str ,int i ,int l)
+     {
+    	 char temp;
+    	 char[] character =str.toCharArray();
+    	 temp =character[i];
+    	 character[i]= character[l] ;
+    	 character[l] = temp ;
+    	  return String.valueOf(character); 
+    	 
+     }
+     
+}
